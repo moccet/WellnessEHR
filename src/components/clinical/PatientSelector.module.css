@@ -1,0 +1,353 @@
+.patientSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.quickSection,
+.searchSection {
+  background: var(--panel-bg);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  border: 1px solid var(--border);
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Recent Patients Grid */
+.recentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.recentCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.recentCard:hover {
+  background: var(--panel-hover);
+  border-color: var(--accent-sage);
+  transform: translateY(-1px);
+}
+
+.recentAvatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--accent-sage), var(--accent-moss));
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.recentInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.recentName {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recentDetails {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.recentAction {
+  color: var(--accent-sage);
+  font-size: 18px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Search Controls */
+.searchControls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.searchInputContainer {
+  flex: 1;
+}
+
+.filterButtons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: 6px 16px;
+  background: var(--panel-hover);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.filterBtn:hover {
+  background: var(--accent-sage);
+  color: white;
+  border-color: var(--accent-sage);
+}
+
+.filterBtn.active {
+  background: var(--accent-sage);
+  color: white;
+  border-color: var(--accent-sage);
+}
+
+/* Patient List */
+.patientList {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.patientRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.patientRow:last-child {
+  border-bottom: none;
+}
+
+.patientRow:hover {
+  background: var(--panel-hover);
+}
+
+.patientAvatar {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--accent-sage), var(--accent-moss));
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.patientInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.patientName {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.patientDetails {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.patientService {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.patientStatus {
+  flex-shrink: 0;
+}
+
+.statusBadge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.statusBadge.waiting {
+  background: var(--accent-warning);
+  color: white;
+}
+
+.statusBadge.active {
+  background: var(--accent-success);
+  color: white;
+}
+
+.statusBadge.completed {
+  background: var(--text-muted);
+  color: white;
+}
+
+.patientAction {
+  flex-shrink: 0;
+}
+
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-secondary);
+}
+
+.emptyIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.emptyTitle {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.emptyText {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Alternative Actions */
+.alternativeActions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.actionCard {
+  background: linear-gradient(135deg, var(--panel-bg), var(--panel-hover));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.actionCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--accent-sage);
+}
+
+.actionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-sage);
+  margin-bottom: 8px;
+}
+
+.actionText {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .searchControls {
+    flex-direction: column;
+  }
+  
+  .recentGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .patientRow {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .patientAction {
+    width: 100%;
+    margin-top: 8px;
+  }
+  
+  .patientAction button {
+    width: 100%;
+  }
+  
+  .alternativeActions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .quickSection,
+  .searchSection {
+    padding: 16px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+  }
+  
+  .filterButtons {
+    justify-content: center;
+  }
+  
+  .filterBtn {
+    flex: 1;
+    min-width: 80px;
+  }
+}

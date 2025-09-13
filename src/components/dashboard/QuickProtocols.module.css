@@ -1,0 +1,52 @@
+.container {
+  background: var(--panel-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.content {
+  padding: 20px;
+}
+
+.protocolCard {
+  background: linear-gradient(135deg, #f0f4f1, #e8ede9);
+  border: 1px solid var(--accent-sage);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.protocolCard:last-child {
+  margin-bottom: 0;
+}
+
+.protocolCard:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.protocolTitle {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--accent-moss);
+}
+
+.protocolSteps {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
