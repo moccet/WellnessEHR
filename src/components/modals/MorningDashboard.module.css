@@ -1,0 +1,150 @@
+.morningDashboard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--system-bg), var(--panel-hover));
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    overflow-y: auto;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.morningHeader {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.morningGreeting {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.morningDate {
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+.morningGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+    flex: 1;
+}
+
+.morningCard {
+    background: var(--panel-bg);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.morningCard:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.morningCardTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.morningCardContent {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.prepItem {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.prepItem:last-child {
+    border-bottom: none;
+}
+
+.prepPriority {
+    padding: 4px 12px;
+    background: var(--accent-warning);
+    color: white;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.prepPriority.urgent {
+    background: var(--accent-danger);
+}
+
+.prepPriority.high {
+    background: var(--accent-danger);
+}
+
+.prepPriority.medium {
+    background: var(--accent-warning);
+}
+
+.prepPriority.low {
+    background: var(--accent-info);
+}
+
+.startDayBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    border-radius: 30px;
+    box-shadow: var(--shadow-lg);
+}
+
+.startDayBtn:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .morningDashboard {
+        padding: 20px;
+    }
+
+    .morningGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .morningGreeting {
+        font-size: 24px;
+    }
+
+    .startDayBtn {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        width: 100%;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,124 @@
+.recordingBox {
+    background: linear-gradient(135deg, var(--accent-sage), var(--accent-moss));
+    color: white;
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.recordingWave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    opacity: 0;
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    padding: 0 24px;
+    transition: opacity 0.3s ease;
+}
+
+.recordingWave.active {
+    opacity: 0.3;
+}
+
+.waveBar {
+    flex: 1;
+    background: white;
+    border-radius: 2px;
+    height: 20px;
+    animation: wave 1.2s ease-in-out infinite paused;
+}
+
+.recordingWave.active .waveBar {
+    animation-play-state: running;
+}
+
+.waveBar:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+.waveBar:nth-child(3n) {
+    animation-delay: 0.2s;
+}
+
+.waveBar:nth-child(5n) {
+    animation-delay: 0.3s;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        height: 20px;
+    }
+
+    50% {
+        height: 40px;
+    }
+}
+
+.recordingContent {
+    position: relative;
+    z-index: 1;
+}
+
+.recordingStatus {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.recordDot {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.recordDot.active {
+    animation: pulse 1.5s ease infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+}
+
+.statusText {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.recordingTime {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.recordingControls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+    .recordingControls {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,66 @@
+.consultationTab {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.formSection {
+    background: var(--panel-bg);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+}
+
+.formTitle {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px 16px;
+    background: var(--panel-hover);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 15px;
+    resize: vertical;
+    transition: var(--transition);
+    line-height: 1.6;
+}
+
+.textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.textarea:focus {
+    outline: none;
+    border-color: var(--accent-sage);
+    background: var(--panel-bg);
+}
+
+.actionSection {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .formSection {
+        padding: 16px;
+    }
+}

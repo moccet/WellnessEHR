@@ -1,0 +1,118 @@
+.sidebar {
+    width: 72px;
+    background: var(--panel-bg);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    transition: width 0.3s ease;
+    z-index: 100;
+}
+
+.sidebar:hover {
+    width: 240px;
+}
+
+.header {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    background: var(--text-primary);
+    color: var(--panel-bg);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.navSection {
+    flex: 1;
+    padding: 12px 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 0 24px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    white-space: nowrap;
+}
+
+.navItem:hover {
+    background: var(--panel-hover);
+    color: var(--text-primary);
+}
+
+.navItem.active {
+    color: var(--accent-sage);
+}
+
+.navItem.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 24px;
+    background: var(--accent-sage);
+    border-radius: 0 3px 3px 0;
+}
+
+.navIcon {
+    min-width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.navLabel {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.navLabel.visible {
+    opacity: 1;
+}
+
+.sidebar:hover .navLabel {
+    opacity: 1;
+}
+
+/* Mobile styles */
+@media (max-width: 1024px) {
+    .sidebar {
+        position: fixed;
+        left: -240px;
+        width: 240px;
+        z-index: 1100;
+    }
+
+    .sidebar.mobileOpen {
+        left: 0;
+    }
+
+    .sidebar .navLabel {
+        opacity: 1;
+    }
+}

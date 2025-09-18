@@ -1,0 +1,125 @@
+.clinicalOS {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.content {
+    flex: 1;
+    padding: 32px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 60px;
+    /* Space for smart actions bar */
+}
+
+.dashboardGrid {
+    display: grid;
+    gap: 24px;
+    margin-bottom: 32px;
+    animation: fadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.viewContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.viewTitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.serviceCard {
+    padding: 20px;
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.serviceCard:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-sage);
+}
+
+.serviceIcon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 16px;
+    background: var(--panel-hover);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--accent-sage);
+}
+
+.serviceName {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.serviceDuration {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.tabPlaceholder {
+    padding: 40px;
+    text-align: center;
+    background: var(--panel-bg);
+    border-radius: var(--radius-lg);
+}
+
+.tabPlaceholder h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.tabPlaceholder p {
+    color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+    .content {
+        padding: 16px;
+    }
+
+    .servicesGrid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .serviceCard {
+        padding: 16px;
+    }
+
+    .serviceIcon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+}

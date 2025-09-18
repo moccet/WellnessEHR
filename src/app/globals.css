@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@import "../styles/animations.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    --system-bg: #faf9f7;
+    --panel-bg: #ffffff;
+    --panel-hover: #f7f5f2;
+    --text-primary: #1a1a1a;
+    --text-secondary: #6b6b6b;
+    --text-muted: #a8a8a8;
+    --border: #e8e4df;
+    --accent-sage: #7a8b7f;
+    --accent-moss: #5a6b5f;
+    --accent-success: #52a373;
+    --accent-warning: #d4a574;
+    --accent-danger: #c66b6b;
+    --accent-info: #6b9bc6;
+    --overlay: rgba(26, 26, 26, 0.7);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.04);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.10);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.12);
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --font-system: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+}
+
+@theme inline {
+    --color-background: var(--system-bg);
+    --color-foreground: var(--text-primary);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+}
+
+body {
+    font-family: var(--font-system);
+    background: var(--system-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior: none;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}

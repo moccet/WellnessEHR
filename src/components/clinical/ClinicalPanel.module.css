@@ -1,0 +1,163 @@
+.clinicalPanel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    left: 72px;
+    width: calc(100% - 72px);
+    max-width: none;
+    background: var(--system-bg);
+    box-shadow: var(--shadow-xl);
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    transition: right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 99;
+}
+
+.clinicalPanel.active {
+    right: 0;
+    left: 72px;
+}
+
+.panelSidebar {
+    background: var(--panel-bg);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.panelPatient {
+    padding: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.patientHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.patientAvatar {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--accent-sage), var(--accent-moss));
+    color: white;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.patientInfo {
+    flex: 1;
+}
+
+.patientName {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.patientId {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.panelNav {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.panelNavItem {
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.panelNavItem:hover {
+    background: var(--panel-hover);
+}
+
+.panelNavItem.active {
+    background: var(--accent-sage);
+    color: white;
+}
+
+.tabIcon {
+    font-size: 16px;
+}
+
+.panelMain {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.panelHeader {
+    height: 72px;
+    padding: 0 32px;
+    background: var(--panel-bg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.panelTitle {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.panelTools {
+    display: flex;
+    gap: 12px;
+}
+
+.panelContent {
+    flex: 1;
+    padding: 32px;
+    overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+    .clinicalPanel {
+        left: 0;
+        width: 100%;
+        max-width: none;
+        grid-template-columns: 1fr;
+        z-index: 1200;
+    }
+    
+    .clinicalPanel.active {
+        left: 0;
+    }
+
+    .panelSidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .panelContent {
+        padding: 16px;
+    }
+
+    .panelHeader {
+        padding: 0 16px;
+    }
+
+    .panelTools {
+        gap: 8px;
+    }
+}

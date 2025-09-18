@@ -1,0 +1,197 @@
+.errorContainer {
+    min-height: 100vh;
+    padding: 40px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    color: white;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    animation: errorPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes errorPulse {
+    0% { background: linear-gradient(135deg, #ff6b6b, #ee5a52); }
+    100% { background: linear-gradient(135deg, #ff5252, #d32f2f); }
+}
+
+.errorHeader {
+    text-align: center;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 24px;
+}
+
+.errorTitle {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.errorSubtitle {
+    font-size: 18px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.errorDetails {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 24px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.errorDetails h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #ffeb3b;
+}
+
+.errorMessage {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px 16px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border-left: 4px solid #ffeb3b;
+    font-size: 16px;
+}
+
+.errorMessage strong {
+    color: #ffeb3b;
+    font-weight: 700;
+}
+
+.errorStack {
+    margin: 16px 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.errorStack summary {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.errorStack summary:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.errorStack pre {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 16px;
+    margin: 0;
+    overflow-x: auto;
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.errorActions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.retryButton,
+.reloadButton {
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.retryButton {
+    background: #4caf50;
+    color: white;
+}
+
+.retryButton:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.reloadButton {
+    background: #ff9800;
+    color: white;
+}
+
+.reloadButton:hover {
+    background: #e68900;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.errorInstructions {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 24px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 193, 7, 0.3);
+}
+
+.errorInstructions h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #ffc107;
+}
+
+.errorInstructions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.errorInstructions li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 16px;
+    position: relative;
+    padding-left: 24px;
+}
+
+.errorInstructions li:before {
+    content: '⚠️';
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
+.errorInstructions li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .errorContainer {
+        padding: 20px;
+        gap: 24px;
+    }
+
+    .errorTitle {
+        font-size: 32px;
+    }
+
+    .errorSubtitle {
+        font-size: 16px;
+    }
+
+    .errorActions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .retryButton,
+    .reloadButton {
+        width: 100%;
+        max-width: 300px;
+    }
+}
